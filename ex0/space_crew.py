@@ -51,14 +51,14 @@ def main():
 
     try:
         SpaceCrew(
-            station_id="ISS001",
-            name="International Space Station",
-            crew_size=21,
-            power_level=85.5,
-            oxygen_level=92.3,
-            last_maintenance=datetime(2026, 3, 13, 10, 30),
+            station_id="UK01",
+            name="Alien Space Station",
+            crew_size=28,
+            power_level=107.5,
+            oxygen_level=0.1,
+            last_maintenance=datetime(2092, 12, 29, 13, 1),
             is_operational=True,
-            notes="Primary orbital research station",
+            notes="Alien Crazy station",
         )
     except Exception as error:
         print("Expected validation error:")
