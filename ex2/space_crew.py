@@ -38,9 +38,13 @@ class SpaceMission(BaseModel):
             raise ValueError('Mission ID must start with "M"')
 
         leadership_ranks = {Rank.COMMANDER, Rank.CAPTAIN}
-        has_leader = any(member.rank in leadership_ranks for member in self.crew)
+        has_leader = any(
+            member.rank in leadership_ranks for member in self.crew
+        )
         if not has_leader:
-            raise ValueError("Mission must have at least one Commander or Captain")
+            raise ValueError(
+                "Mission must have at least one Commander or Captain"
+            )
 
         if any(not member.is_active for member in self.crew):
             raise ValueError("All crew members must be active")
@@ -51,7 +55,8 @@ class SpaceMission(BaseModel):
             )
             if experienced_crew < len(self.crew) / 2:
                 raise ValueError(
-                    "Long missions (> 365 days) need 50% experienced crew (5+ years)"
+                    "Long missions (> 365 days) need 50% experienced "
+                    "crew (5+ years)"
                 )
 
         return self
@@ -106,7 +111,10 @@ def main() -> None:
     print(f"Crew size: {len(valid_mission.crew)}")
     print("Crew members:")
     for member in valid_mission.crew:
-        print(f"- {member.name} ({member.rank.value}) - {member.specialization}")
+        print(
+            f"- {member.name} ({member.rank.value}) - "
+            f"{member.specialization}"
+        )
     print(separator)
 
     try:
