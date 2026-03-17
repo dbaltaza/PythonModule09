@@ -67,6 +67,7 @@ def main() -> None:
     print(f"Duration: {valid_contact.duration_minutes} minutes")
     print(f"Witnesses: {valid_contact.witness_count}")
     print(f"Message: '{valid_contact.message_received}'")
+    print()
     print(separator)
 
     try:

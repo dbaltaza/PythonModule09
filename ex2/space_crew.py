@@ -115,6 +115,7 @@ def main() -> None:
             f"- {member.name} ({member.rank.value}) - "
             f"{member.specialization}"
         )
+    print()
     print(separator)
 
     try:

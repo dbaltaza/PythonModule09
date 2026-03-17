@@ -40,6 +40,7 @@ def main() -> None:
         "Operational" if valid_station.is_operational else "Not Operational"
     )
     print(f"Status: {status}")
+    print()
     print(separator)
 
     try:
